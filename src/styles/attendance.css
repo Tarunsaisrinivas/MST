@@ -1,0 +1,87 @@
+/* Attendance.css */
+
+.attendance-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dropdowns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-boxes {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.add-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+.absent-list h3,
+.todo-list h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.absent-list ul,
+.todo-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.absent-list li,
+.todo-list li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #bb2d3b;
+}
