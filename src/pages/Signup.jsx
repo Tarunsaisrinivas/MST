@@ -2,23 +2,39 @@ import React, { useState } from 'react';
 import loginImage from '/loginIcon.png'; // Import your image
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
 import '../styles/signup.css'; // Import your CSS file
+import axios from 'axios'
 
 const Signup = () => {
     const [email, setEmail] = useState("");
+    const [name,setName] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
             alert("Passwords do not match");
             return;
         }
-        // Your signup logic goes here
-    }
-
+        try {
+          const res = await axios.post("http://localhost:5050/signup", {
+            email: email,
+            password: password,
+          });
+    
+          if (res.data) {
+            if (res.status == 200 || res.status == 409) {
+              alert(res.data.message);
+            }
+          }
+        } catch (error) {
+          console.log("Axios Error", error);
+        }
+      };
+    
+  
     return (
         <div className='container'>
             <div className='card'>
@@ -33,6 +49,16 @@ const Signup = () => {
                                 placeholder='Enter Email...'
                                 className='input'
                                 onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <label htmlFor='name' className='label'>Name:</label>
+                            <input
+                                type='text'
+                                id='name'
+                                placeholder='Enter Name...'
+                                className='input'
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                         <div className='form-group'>
