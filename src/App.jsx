@@ -7,6 +7,7 @@ import Attendance from "./pages/Attendance";
 import Sample from "./pages/Sample";
 
 
+
 const App = () => {
 
 
@@ -14,7 +15,6 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-
         <Route path="/signup" element={<Signup />} />
         <Route path="/attendance" element={<Attendance />} />
         <Route path="/sample" element={<Sample />} />

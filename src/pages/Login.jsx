@@ -14,7 +14,7 @@ const Login = () => {
     console.log({ email: email, password: password });
 
     try {
-      const res = await axios.post("http://localhost:5050/signin", {
+      const res = await axios.post("https://mst-62fw.onrender.com/signin", {
         email: email,
         password: password,
       });

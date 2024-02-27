@@ -19,7 +19,7 @@ const Signup = () => {
             return;
         }
         try {
-          const res = await axios.post("http://localhost:5050/signup", {
+          const res = await axios.post("https://mst-62fw.onrender.com/signup", {
             email: email,
             password: password,
           });
