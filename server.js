@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://mstproject.netlify.app"],
-    method: ["GET", "PUT", "POST", "DELETE"],
+    methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   })
 );
