@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://mstproject.netlify.app/"],
     method: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   })
@@ -45,13 +45,11 @@ app.post("/signin", (req, res) => {
     User.findOne({ email: email }).then((usr) => {
       if (usr) {
         if (usr.password === password)
-          res
-            .status(200)
-            .json({
-              email: usr.email,
-              message: "login success",
-              name: usr.name,
-            });
+          res.status(200).json({
+            email: usr.email,
+            message: "login success",
+            name: usr.name,
+          });
         else res.status(401).json({ message: "Invalid Password" });
       } else {
         res.status(404).json({ message: "Invalid user" });
